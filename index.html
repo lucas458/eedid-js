@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>EEDID JS</title>
+</head>
+
+
+
+<body>
+    
+
+    <div id="main_screen">
+        <div id="mainButtonList">
+            <div class="main_button" id="button_generateSummary">Generate</div>
+            <div class="main_button" id="button_random">Random Memory</div>
+            <div class="main_button" id="button_clear">Clear Memory</div>
+        </div>
+
+        <div id="hexview"></div>
+    </div>
+    
+
+
+    <div id="summary_screen">
+        <div id="summaryClose">Close</div>
+        <div id="summary_data"></div>
+    </div>
+    
+
+
+    <div id="modalEdit">
+
+        <div id="modalEditWindow">
+
+            <div id="modalEditHeader">Edit</div>
+
+            <div id="modalEditContent">
+
+                <div id="modalEditContentInputWrapper">
+                    <input type="text" id="modalEditContentInput" maxlength="2" spellcheck="false" placeholder="Data Value">
+                </div>
+                
+                <div id="modalEditContentTypeGroup">
+                    <label class="uiRadio">
+                        <input type="radio" name="typeValue" value="hex" checked>
+                        <div> <div></div> </div>
+                        <span>HEX</span>
+                    </label>
+                    <label class="uiRadio">
+                        <input type="radio" name="typeValue"value="dec" >
+                        <div> <div></div> </div>
+                        <span>DEC</span>
+                    </label>
+                </div>
+            
+            </div>
+
+            <div id="modalEditFooter">
+                <div class="modalEditFooterButton" onclick="onModalCancel()">Cancel</div>
+                <div class="modalEditFooterButton" onclick="onModalSave()">Save</div>
+            </div>
+
+        </div>
+
+    </div>
+     
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

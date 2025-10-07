@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #181818;
+    color: #fff;
+    user-select: none;
+}
+
+
+
+#main_screen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+}
+
+
+
+
+/* MAIN BUTTONS */
+#mainButtonList{
+    display: flex;
+    gap: 16px;
+}
+
+.main_button{
+    padding: 8px 16px;
+    background-color: #007bff;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 0 #000;
+}
+.main_button:hover{
+    opacity: 0.8;
+}
+
+#button_generateSummary{
+    background-color: #28a745;
+}
+
+#button_clear{
+    background-color: #dc3545;
+}
+
+
+
+
+
+
+
+/* HEX-VIEW */
+#hexview{
+    background-color: #212121;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+.hexview_row{
+    height: 24px;
+    display: flex;
+    color: #fff;
+}
+
+.hexview_separator{
+    width: 2px;
+    height: 100%;
+    background-color: #353535;
+    margin: 0 16px;
+}
+
+.hexview_data_container{
+    display: flex;
+}
+
+.hexview_data{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hexview_data_container_hex .hexview_data:nth-child(9){
+    margin-left: 8px;
+}
+
+.hexview_data_container_hex .hexview_data{
+    border-bottom: 1px solid transparent;
+}
+
+.hexview_data_container_ascii .hexview_data{
+    width: 16px; 
+}
+
+
+.hexview_data_pseudoHover,
+.hexview_data:hover{
+    background-color: #353535; 
+    border-color: #fff !important;
+}
+
+
+#hexview:has(.hexview_address:hover) .hexview_row:not(:hover){
+    color: #888;
+}
+
+
+
+
+
+
+
+
+
+
+/* SCREEN SUMMARY */
+#summary_screen{
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    /* display: flex; */ 
+    flex-direction: column;
+    position: fixed;
+    display: none;
+}
+
+#summaryClose{
+    margin: 16px;
+    width: fit-content;
+    padding: 8px 16px;
+    background-color: #dc3545;
+    border-radius: 6px;
+}
+#summaryClose:hover{
+    opacity: 0.8;
+}
+
+
+#summary_data{
+    user-select: text !important;
+    font-family: monospace;
+    white-space: pre;
+    overflow: auto;
+    padding: 10px;
+}
+
+
+
+
+
+
+/* MODAL */
+#modalEdit{
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    display: none;
+}
+
+
+#modalEditWindow{
+    width: 280px;
+    min-height: 128px;
+    box-shadow: 0 0 5px 0 #000;
+    background-color: #181818;
+    padding: 8px;
+    border-radius: 6px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#modalEditWindow > div{
+    flex-shrink: 0;
+}
+
+#modalEditHeader{
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+#modalEditContent{
+    margin: 16px 0;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modalEditFooter{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.modalEditFooterButton{
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: #353535;
+}
+
+.modalEditFooterButton:last-child{
+    background-color: #007bff;
+}
+
+.modalEditFooterButton:hover{
+    opacity: 0.8;
+}
+
+
+
+
+#modalEditContentInputWrapper{
+    width: 100%;
+    margin-right: 10px;
+}
+
+#modalEditContentInput{
+    padding: 4px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #353535;
+    caret-color: #f00;
+} 
+
+
+
+
+
+/* RADIO BUTTON WIDGET */
+.uiRadio input{
+    display: none;
+}
+
+.uiRadio{
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.uiRadio > div{
+    width: 16px;
+    height: 16px;
+    padding: 2px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.uiRadio > div > div{
+    width: 100%;
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 50%;
+    transition: 200ms;
+    transform: scale(0);
+}
+
+.uiRadio input:checked ~ div > div{
+    transform: scale(1);
+}
