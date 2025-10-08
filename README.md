@@ -1,6 +1,12 @@
 # eedid-js
 Dados de EEDID para JSON
 
+[Exemplo de EEPROM](https://blog.danman.eu/emulating-hdmi-connection/)
+
+[EDID Wikipedia](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data)
+
+[EEDID VESA](https://glenwing.github.io/docs/VESA-EEDID-A2.pdf)
+
 ### Exemplo de saída
 ```json
 {
